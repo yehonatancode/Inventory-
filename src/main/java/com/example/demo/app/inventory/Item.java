@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Item { //Class dedicated for inventory items, generating methods and constructors.
 	
 	@Id
-	@Column(name="no",unique=true,nullable=false)
+	@Column(name="no",unique=true,nullable=false) //added a dependency to allow these annotations
 	private String no;
 	private String name;
 	private String amount;
