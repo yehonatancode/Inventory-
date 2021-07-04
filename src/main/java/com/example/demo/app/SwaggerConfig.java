@@ -1,5 +1,5 @@
 package com.example.demo.app;
-
+//http://localhost:8080/swagger-ui.html
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -27,18 +27,16 @@ public class SwaggerConfig {
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("JavaInUse API")
-				.description("JavaInUse API reference for developers")
-				.termsOfServiceUrl("http://javainuse.com")
-				.contact("javainuse@gmail.com").license("JavaInUse License")
-				.licenseUrl("javainuse@gmail.com").version("1.0").build();
+		return new ApiInfoBuilder().title("Inventory Prop")
+				.description("Maintenance of Inventory")
+				.termsOfServiceUrl("")
+				.licenseUrl("").version("1.0").build();
 	}
 	private ApiInfo api2Info() {
-		return new ApiInfoBuilder().title("JavaInUse API")
-				.description("JavaInUse API reference for developers")
-				.termsOfServiceUrl("http://javainuse.com")
-				.contact("javainuse@gmail.com").license("JavaInUse License")
-				.licenseUrl("javainuse@gmail.com").version("1.0").build();
+		return new ApiInfoBuilder().title("Inventory")
+				.description("Maintenance and Update")
+				.termsOfServiceUrl("")
+				.licenseUrl("").version("1.0").build();
 	}
 
 	
