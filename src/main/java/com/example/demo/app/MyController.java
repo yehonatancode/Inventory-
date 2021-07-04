@@ -16,39 +16,40 @@ import com.example.demo.app.inventory.ItemServices;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
+@RequestMapping(path="/items")
 public class MyController {
 	
 	@Autowired
 	private ItemServices is;
 	
-	@RequestMapping(method = RequestMethod.GET, value = "welcome")
+	@RequestMapping(method = RequestMethod.GET, path = "welcome")
 	public String sayHello() {
 		return "Welcome to our swagger-based inventory!";
 	}
 	
 	
-	@RequestMapping(method = RequestMethod.GET, value = "/items/")
+	@RequestMapping(method = RequestMethod.GET, path = "/items/")
 	@ApiOperation( value = "List of the inventory", 
 	notes = "Find all the items in the inventory", response = Item.class)
 	public ArrayList<Item> getAllItems() {
 		return is.getAllItems();
 	}
 	
-	@PostMapping("/items")
+	@RequestMapping(method = RequestMethod.POST, path = "/items/{no}")
 	@ApiOperation( value = "Add an items to stock", 
 	notes = "Add an item to the stock from the request body", response = Item.class)
 	public Item addItem(@RequestBody Item item) {
 		return is.addItem(item);
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value = "/items/{no}")
+	@RequestMapping(method = RequestMethod.GET, path = "/items/{no}")
 	@ApiOperation( value = "Read item details by item no", 
 	notes = "Find a specific item by the item's no", response = Item.class)
 	public Item getItem(@PathVariable String no) {
 		return is.getItem(no);
 	}
 	
-	@RequestMapping(method = RequestMethod.PUT, value = "/items/{no}/w/{quantity}")
+	@RequestMapping(method = RequestMethod.PUT, path = "/items/{no}/w/{quantity}")
 	@ApiOperation( value = "Withdrawal quantity of a specific item from stock", 
 	notes = "Make a withdrawal of the item assuming that quantity exists in the inventory and return it with the new quantity", response = Item.class)
 	public Item withdrawalItem(@PathVariable String no, @PathVariable String quantity) {
@@ -65,7 +66,7 @@ public class MyController {
 		return is.updateItem(no, item);
 	}
 
-	@RequestMapping(method = RequestMethod.PUT, value = "/items/{no}/d/{quantity}")
+	@RequestMapping(method = RequestMethod.PUT, path = "/items/{no}/d/{quantity}")
 	@ApiOperation( value = "Deposit quantity of a specific item to stock",
 	notes = "Make a deposit of an item and return it with the new quantity", response = Item.class)
 	public Item depositItem(@PathVariable String no, @PathVariable String quantity) {
@@ -76,7 +77,7 @@ public class MyController {
 		return is.updateItem(no, item);
 	}
 	
-	@RequestMapping(method = RequestMethod.DELETE, value = "remove /items/{no}")
+	@RequestMapping(method = RequestMethod.DELETE, path = "remove /items/{no}")
 	@ApiOperation( value = "Delete an item from stock", 
 	notes = "Delete an item and return it", response = Item.class)
 	public Item deleteItem(@PathVariable("no") String no) {
@@ -89,4 +90,3 @@ public class MyController {
 	
 	
 	
-
