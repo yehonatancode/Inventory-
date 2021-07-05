@@ -1,342 +1,15 @@
-2021-07-04 15:42:18.962  INFO 16916 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Starting SpringbootAssignmentApplication using Java 15.0.2 on LAPTOP-D177S94B with PID 16916 (C:\Users\User\Desktop\spring-workspace\SpringbootAssignment\target\classes started by User in C:\Users\User\Desktop\spring-workspace\SpringbootAssignment)
-2021-07-04 15:42:18.964  INFO 16916 --- [main] c.e.d.a.SpringbootAssignmentApplication  : The following profiles are active: defult
-2021-07-04 15:42:19.729  INFO 16916 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2021-07-04 15:42:19.786  INFO 16916 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 1 MongoDB repository interfaces.
-2021-07-04 15:42:20.236  INFO 16916 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2021-07-04 15:42:20.248  INFO 16916 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-04 15:42:20.248  INFO 16916 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
-2021-07-04 15:42:20.324  INFO 16916 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-04 15:42:20.325  INFO 16916 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1314 ms
-2021-07-04 15:42:20.466  INFO 16916 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2021-07-04 15:42:20.920 TRACE 16916 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
-	c.e.d.a.MyController:
-	{GET [/items/{no}]}: getItem(String)
-	{PUT [/items/{no}/w/{quantity}]}: withdrawalItem(String,String)
-	{POST [/items]}: addItem(Item)
-	{GET [/items]}: getAllItems()
-	{GET [/api/javainuse]}: sayHello()
-	{PUT [/items/{no}/d/{quantity}]}: depositItem(String,String)
-	{DELETE [/items/{no}]}: deleteItem(String)
-2021-07-04 15:42:20.923 TRACE 16916 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
-	s.d.s.w.Swagger2Controller:
-	{GET [/v2/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
-2021-07-04 15:42:20.924 TRACE 16916 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
-	s.d.s.w.ApiResourceController:
-	{ [/swagger-resources]}: swaggerResources()
-	{ [/configuration/ui]}: uiConfiguration()
-	{ [/configuration/security]}: securityConfiguration()
-2021-07-04 15:42:20.928 TRACE 16916 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
-	o.s.b.a.w.s.e.BasicErrorController:
-	{ [/error]}: error(HttpServletRequest)
-	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
-2021-07-04 15:42:20.932 DEBUG 16916 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
-2021-07-04 15:42:21.065  INFO 16916 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2021-07-04 15:42:21.128  WARN 16916 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-07-04 15:42:21.232  INFO 16916 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2021-07-04 15:42:21.241  INFO 16916 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-07-04 15:42:21.259  INFO 16916 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-07-04 15:42:21.265  INFO 16916 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-07-04 15:42:21.326  INFO 16916 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Started SpringbootAssignmentApplication in 2.795 seconds (JVM running for 3.515)
-2021-07-04 15:42:22.551  INFO 16916 --- [cluster-ClusterId{value='60e1acacf6fadb0288516491', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
-
-com.mongodb.MongoSocketOpenException: Exception opening socket
-	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:143) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144) ~[mongodb-driver-core-4.2.3.jar:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333) ~[na:na]
-	at java.base/java.net.Socket.connect(Socket.java:648) ~[na:na]
-	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.2.3.jar:na]
-	... 4 common frames omitted
-
-2021-07-04 15:42:35.602  INFO 16916 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-07-04 15:42:35.602  INFO 16916 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-07-04 15:42:35.603  INFO 16916 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2021-07-04 15:43:33.852 TRACE 16916 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 matching mappings: [{ [/error]}, { [/error], produces [text/html]}]
-2021-07-04 15:43:33.853 TRACE 16916 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2021-07-04 15:43:33.877 TRACE 16916 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
-2021-07-04 15:43:33.961 TRACE 16916 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
-2021-07-04 15:43:33.980 TRACE 16916 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)
-2021-07-04 15:43:34.083 TRACE 16916 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
-2021-07-04 15:45:14.776 TRACE 16916 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.app.MyController#sayHello()
-2021-07-04 16:01:26.488  INFO 16916 --- [RMI TCP Connection(26)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-07-04 16:01:33.619  INFO 13304 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Starting SpringbootAssignmentApplication using Java 15.0.2 on LAPTOP-D177S94B with PID 13304 (C:\Users\User\Desktop\spring-workspace\SpringbootAssignment\target\classes started by User in C:\Users\User\Desktop\spring-workspace\SpringbootAssignment)
-2021-07-04 16:01:33.622  INFO 13304 --- [main] c.e.d.a.SpringbootAssignmentApplication  : The following profiles are active: defult
-2021-07-04 16:01:34.360  INFO 13304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2021-07-04 16:01:34.403  INFO 13304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 MongoDB repository interfaces.
-2021-07-04 16:01:34.814  INFO 13304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2021-07-04 16:01:34.823  INFO 13304 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-04 16:01:34.823  INFO 13304 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
-2021-07-04 16:01:34.904  INFO 13304 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-04 16:01:34.904  INFO 13304 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1235 ms
-2021-07-04 16:01:35.051  INFO 13304 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2021-07-04 16:01:35.517 TRACE 13304 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
-	c.e.d.a.MyController:
-	{GET [/items/{no}]}: getItem(String)
-	{GET [/welcome]}: sayHello()
-	{POST [/items]}: addItem(Item)
-	{PUT [/items/{no}/w/{quantity}]}: withdrawalItem(String,String)
-	{GET [/items/]}: getAllItems()
-	{PUT [/items/{no}/d/{quantity}]}: depositItem(String,String)
-	{DELETE [/remove /items/{no}]}: deleteItem(String)
-2021-07-04 16:01:35.520 TRACE 13304 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
-	s.d.s.w.Swagger2Controller:
-	{GET [/v2/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
-2021-07-04 16:01:35.521 TRACE 13304 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
-	s.d.s.w.ApiResourceController:
-	{ [/configuration/security]}: securityConfiguration()
-	{ [/swagger-resources]}: swaggerResources()
-	{ [/configuration/ui]}: uiConfiguration()
-2021-07-04 16:01:35.526 TRACE 13304 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
-	o.s.b.a.w.s.e.BasicErrorController:
-	{ [/error]}: error(HttpServletRequest)
-	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
-2021-07-04 16:01:35.530 DEBUG 13304 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
-2021-07-04 16:01:35.667  INFO 13304 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2021-07-04 16:01:35.732  WARN 13304 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-07-04 16:01:35.812  INFO 13304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2021-07-04 16:01:35.818  INFO 13304 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-07-04 16:01:35.832  INFO 13304 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-07-04 16:01:35.839  INFO 13304 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-07-04 16:01:35.849  INFO 13304 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Started SpringbootAssignmentApplication in 2.603 seconds (JVM running for 3.382)
-2021-07-04 16:01:37.128  INFO 13304 --- [cluster-ClusterId{value='60e1b12f009b207242249863', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
-
-com.mongodb.MongoSocketOpenException: Exception opening socket
-	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:143) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144) ~[mongodb-driver-core-4.2.3.jar:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333) ~[na:na]
-	at java.base/java.net.Socket.connect(Socket.java:648) ~[na:na]
-	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.2.3.jar:na]
-	... 4 common frames omitted
-
-2021-07-04 16:01:43.119  INFO 13304 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-07-04 16:01:43.120  INFO 13304 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-07-04 16:01:43.122  INFO 13304 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2021-07-04 16:01:43.420 TRACE 13304 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
-2021-07-04 16:01:43.515 TRACE 13304 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
-2021-07-04 16:01:43.546 TRACE 13304 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)
-2021-07-04 16:01:43.627 TRACE 13304 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
-2021-07-04 16:01:54.789 TRACE 13304 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
-2021-07-04 16:01:54.838 TRACE 13304 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
-2021-07-04 16:01:54.852 TRACE 13304 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)
-2021-07-04 16:01:54.872 TRACE 13304 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
-2021-07-04 16:02:35.904 TRACE 13304 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
-2021-07-04 16:02:35.947 TRACE 13304 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
-2021-07-04 16:02:35.971 TRACE 13304 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)
-2021-07-04 16:02:35.992 TRACE 13304 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
-2021-07-04 16:02:37.210 TRACE 13304 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
-2021-07-04 16:02:37.228 TRACE 13304 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
-2021-07-04 16:02:37.244 TRACE 13304 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)
-2021-07-04 16:02:37.275 TRACE 13304 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
-2021-07-04 16:02:38.478 TRACE 13304 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
-2021-07-04 16:02:38.501 TRACE 13304 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
-2021-07-04 16:02:38.562 TRACE 13304 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)
-2021-07-04 16:02:38.585 TRACE 13304 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
-2021-07-04 16:02:45.199  INFO 13304 --- [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-07-04 16:02:52.023  INFO 11116 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Starting SpringbootAssignmentApplication using Java 15.0.2 on LAPTOP-D177S94B with PID 11116 (C:\Users\User\Desktop\spring-workspace\SpringbootAssignment\target\classes started by User in C:\Users\User\Desktop\spring-workspace\SpringbootAssignment)
-2021-07-04 16:02:52.025  INFO 11116 --- [main] c.e.d.a.SpringbootAssignmentApplication  : The following profiles are active: defult
-2021-07-04 16:02:52.830  INFO 11116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2021-07-04 16:02:52.872  INFO 11116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 1 MongoDB repository interfaces.
-2021-07-04 16:02:53.271  INFO 11116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2021-07-04 16:02:53.280  INFO 11116 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-04 16:02:53.281  INFO 11116 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
-2021-07-04 16:02:53.383  INFO 11116 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-04 16:02:53.384  INFO 11116 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1313 ms
-2021-07-04 16:02:53.521  INFO 11116 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2021-07-04 16:02:54.039 TRACE 11116 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
-	c.e.d.a.MyController:
-	{GET [/items/{no}]}: getItem(String)
-	{PUT [/items/{no}/d/{quantity}]}: depositItem(String,String)
-	{PUT [/items/{no}/w/{quantity}]}: withdrawalItem(String,String)
-	{DELETE [/remove /items/{no}]}: deleteItem(String)
-	{GET [/items/]}: getAllItems()
-	{GET [/welcome]}: sayHello()
-	{POST [/items]}: addItem(Item)
-2021-07-04 16:02:54.042 TRACE 11116 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
-	s.d.s.w.Swagger2Controller:
-	{GET [/v2/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
-2021-07-04 16:02:54.044 TRACE 11116 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
-	s.d.s.w.ApiResourceController:
-	{ [/configuration/ui]}: uiConfiguration()
-	{ [/swagger-resources]}: swaggerResources()
-	{ [/configuration/security]}: securityConfiguration()
-2021-07-04 16:02:54.050 TRACE 11116 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
-	o.s.b.a.w.s.e.BasicErrorController:
-	{ [/error]}: error(HttpServletRequest)
-	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
-2021-07-04 16:02:54.057 DEBUG 11116 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
-2021-07-04 16:02:54.199  INFO 11116 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2021-07-04 16:02:54.258  WARN 11116 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-07-04 16:02:54.346  INFO 11116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2021-07-04 16:02:54.352  INFO 11116 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-07-04 16:02:54.367  INFO 11116 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-07-04 16:02:54.374  INFO 11116 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-07-04 16:02:54.385  INFO 11116 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Started SpringbootAssignmentApplication in 2.739 seconds (JVM running for 3.527)
-2021-07-04 16:02:55.583  INFO 11116 --- [cluster-ClusterId{value='60e1b17de47c971234e22fad', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
-
-com.mongodb.MongoSocketOpenException: Exception opening socket
-	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:143) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144) ~[mongodb-driver-core-4.2.3.jar:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333) ~[na:na]
-	at java.base/java.net.Socket.connect(Socket.java:648) ~[na:na]
-	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.2.3.jar:na]
-	... 4 common frames omitted
-
-2021-07-04 16:03:02.224  INFO 11116 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-07-04 16:03:02.224  INFO 11116 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-07-04 16:03:02.225  INFO 11116 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2021-07-04 16:03:02.460 TRACE 11116 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
-2021-07-04 16:03:02.581 TRACE 11116 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
-2021-07-04 16:03:02.597 TRACE 11116 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)
-2021-07-04 16:03:02.649 TRACE 11116 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
-2021-07-04 16:03:03.585 TRACE 11116 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
-2021-07-04 16:03:03.610 TRACE 11116 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
-2021-07-04 16:03:03.658 TRACE 11116 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)
-2021-07-04 16:03:03.677 TRACE 11116 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
-2021-07-04 16:03:04.426 TRACE 11116 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
-2021-07-04 16:03:04.447 TRACE 11116 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
-2021-07-04 16:03:04.472 TRACE 11116 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)
-2021-07-04 16:03:04.514 TRACE 11116 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
-2021-07-04 16:03:10.180  WARN 11116 --- [http-nio-8081-exec-6] o.a.c.w.AbstractFileResourceSet          : Resource for web application [] at path [/swagger-ui.] was not loaded as the canonical path [/swagger-ui] did not match. Use of symlinks is one possible cause.
-2021-07-04 16:03:10.184 TRACE 11116 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 matching mappings: [{ [/error], produces [text/html]}, { [/error]}]
-2021-07-04 16:03:10.184 TRACE 11116 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
-2021-07-04 16:03:10.310 TRACE 11116 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 matching mappings: [{ [/error]}, { [/error], produces [text/html]}]
-2021-07-04 16:03:10.310 TRACE 11116 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2021-07-04 16:03:14.420 TRACE 11116 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 matching mappings: [{ [/error], produces [text/html]}, { [/error]}]
-2021-07-04 16:03:14.420 TRACE 11116 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
-2021-07-04 16:03:47.146 TRACE 11116 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 matching mappings: [{ [/error]}, { [/error], produces [text/html]}]
-2021-07-04 16:03:47.147 TRACE 11116 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2021-07-04 16:03:47.173 TRACE 11116 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
-2021-07-04 16:03:47.210 TRACE 11116 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
-2021-07-04 16:03:47.246 TRACE 11116 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)
-2021-07-04 16:03:47.267 TRACE 11116 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
-2021-07-04 16:06:46.810  INFO 11116 --- [RMI TCP Connection(13)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-07-04 16:07:32.090  INFO 3596 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Starting SpringbootAssignmentApplication using Java 15.0.2 on LAPTOP-D177S94B with PID 3596 (C:\Users\User\Desktop\spring-workspace\SpringbootAssignment\target\classes started by User in C:\Users\User\Desktop\spring-workspace\SpringbootAssignment)
-2021-07-04 16:07:32.092  INFO 3596 --- [main] c.e.d.a.SpringbootAssignmentApplication  : The following profiles are active: defult
-2021-07-04 16:07:32.805  INFO 3596 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2021-07-04 16:07:32.844  INFO 3596 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 MongoDB repository interfaces.
-2021-07-04 16:07:33.246  INFO 3596 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2021-07-04 16:07:33.255  INFO 3596 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-04 16:07:33.256  INFO 3596 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
-2021-07-04 16:07:33.357  INFO 3596 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-04 16:07:33.357  INFO 3596 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1225 ms
-2021-07-04 16:07:33.527  INFO 3596 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2021-07-04 16:07:33.993 TRACE 3596 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
-	c.e.d.a.MyController:
-	{GET [/items/{no}]}: getItem(String)
-	{GET [/]}: sayHello()
-	{PUT [/items/{no}/w/{quantity}]}: withdrawalItem(String,String)
-	{PUT [/items/{no}/d/{quantity}]}: depositItem(String,String)
-	{GET [/items]}: getAllItems()
-	{POST [/items]}: addItem(Item)
-	{DELETE [/items/{no}]}: deleteItem(String)
-2021-07-04 16:07:33.997 TRACE 3596 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
-	s.d.s.w.Swagger2Controller:
-	{GET [/v2/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
-2021-07-04 16:07:33.998 TRACE 3596 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
-	s.d.s.w.ApiResourceController:
-	{ [/swagger-resources]}: swaggerResources()
-	{ [/configuration/ui]}: uiConfiguration()
-	{ [/configuration/security]}: securityConfiguration()
-2021-07-04 16:07:34.002 TRACE 3596 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
-	o.s.b.a.w.s.e.BasicErrorController:
-	{ [/error]}: error(HttpServletRequest)
-	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
-2021-07-04 16:07:34.007 DEBUG 3596 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
-2021-07-04 16:07:34.138  INFO 3596 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2021-07-04 16:07:34.191  WARN 3596 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-07-04 16:07:34.262  INFO 3596 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2021-07-04 16:07:34.274  INFO 3596 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-07-04 16:07:34.289  INFO 3596 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-07-04 16:07:34.297  INFO 3596 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-07-04 16:07:34.308  INFO 3596 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Started SpringbootAssignmentApplication in 2.582 seconds (JVM running for 3.393)
-2021-07-04 16:07:35.590  INFO 3596 --- [cluster-ClusterId{value='60e1b29571a86d17ac575607', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
-
-com.mongodb.MongoSocketOpenException: Exception opening socket
-	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:143) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144) ~[mongodb-driver-core-4.2.3.jar:na]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333) ~[na:na]
-	at java.base/java.net.Socket.connect(Socket.java:648) ~[na:na]
-	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-4.2.3.jar:na]
-	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.2.3.jar:na]
-	... 4 common frames omitted
-
-2021-07-04 16:07:41.992  INFO 3596 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-07-04 16:07:41.993  INFO 3596 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-07-04 16:07:41.994  INFO 3596 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2021-07-04 16:07:42.302 TRACE 3596 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 matching mappings: [{ [/error]}, { [/error], produces [text/html]}]
-2021-07-04 16:07:42.303 TRACE 3596 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2021-07-04 16:07:42.329 TRACE 3596 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
-2021-07-04 16:07:42.394 TRACE 3596 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
-2021-07-04 16:07:42.412 TRACE 3596 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)
-2021-07-04 16:07:42.499 TRACE 3596 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
-2021-07-04 16:07:44.608 TRACE 3596 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
-2021-07-04 16:07:44.642 TRACE 3596 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
-2021-07-04 16:07:44.671 TRACE 3596 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)
-2021-07-04 16:07:44.691 TRACE 3596 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
-2021-07-04 16:07:52.670 TRACE 3596 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.app.MyController#sayHello()
-2021-07-04 16:08:07.433 TRACE 3596 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.app.MyController#sayHello()
-2021-07-04 16:09:04.618 TRACE 3596 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
-2021-07-04 16:09:04.652 TRACE 3596 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
-2021-07-04 16:09:04.689 TRACE 3596 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)
-2021-07-04 16:09:04.707 TRACE 3596 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
-2021-07-04 16:12:18.816 TRACE 3596 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
-2021-07-04 16:12:18.862 TRACE 3596 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
-2021-07-04 16:12:18.906 TRACE 3596 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)
-2021-07-04 16:12:18.926 TRACE 3596 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
-2021-07-04 16:26:46.298 TRACE 3596 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
-2021-07-04 16:26:46.327 TRACE 3596 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
-2021-07-04 16:26:46.371 TRACE 3596 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)
-2021-07-04 16:26:46.393 TRACE 3596 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
-2021-07-04 17:09:43.193  INFO 3596 --- [RMI TCP Connection(69)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-07-04 17:09:54.999  INFO 6764 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Starting SpringbootAssignmentApplication using Java 15.0.2 on LAPTOP-D177S94B with PID 6764 (C:\Users\User\Desktop\spring-workspace\SpringbootAssignment\target\classes started by User in C:\Users\User\Desktop\spring-workspace\SpringbootAssignment)
-2021-07-04 17:09:55.002  INFO 6764 --- [main] c.e.d.a.SpringbootAssignmentApplication  : The following profiles are active: defult
-2021-07-04 17:09:55.705  INFO 6764 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2021-07-04 17:09:55.750  INFO 6764 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 1 MongoDB repository interfaces.
-2021-07-04 17:09:56.173  INFO 6764 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2021-07-04 17:09:56.182  INFO 6764 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-04 17:09:56.182  INFO 6764 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
-2021-07-04 17:09:56.295  INFO 6764 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-04 17:09:56.295  INFO 6764 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1254 ms
-2021-07-04 17:09:56.453  INFO 6764 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2021-07-04 17:09:56.894 TRACE 6764 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+2021-07-05 11:25:40.311  INFO 12320 --- [RMI TCP Connection(488)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-07-05 11:25:48.710  INFO 14776 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Starting SpringbootAssignmentApplication using Java 15.0.2 on LAPTOP-D177S94B with PID 14776 (C:\Users\User\Desktop\spring-workspace\SpringbootAssignment\target\classes started by User in C:\Users\User\Desktop\spring-workspace\SpringbootAssignment)
+2021-07-05 11:25:48.713  INFO 14776 --- [main] c.e.d.a.SpringbootAssignmentApplication  : The following profiles are active: defult
+2021-07-05 11:25:49.499  INFO 14776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-07-05 11:25:49.537  INFO 14776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 1 MongoDB repository interfaces.
+2021-07-05 11:25:49.971  INFO 14776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-05 11:25:49.980  INFO 14776 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-05 11:25:49.980  INFO 14776 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-05 11:25:50.106  INFO 14776 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-05 11:25:50.107  INFO 14776 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1351 ms
+2021-07-05 11:25:50.255  INFO 14776 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-07-05 11:25:50.791 TRACE 14776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
 	c.e.d.a.MyController:
 	{GET [/items/items/{no}]}: getItem(String)
 	{GET [/items/welcome]}: sayHello()
@@ -345,27 +18,27 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 	{DELETE [/items/remove /items/{no}]}: deleteItem(String)
 	{PUT [/items/items/{no}/w/{quantity}]}: withdrawalItem(String,String)
 	{PUT [/items/items/{no}/d/{quantity}]}: depositItem(String,String)
-2021-07-04 17:09:56.897 TRACE 6764 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
-	s.d.s.w.Swagger2Controller:
+2021-07-05 11:25:50.795 TRACE 14776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	s.d.s.w.Swagger2ControllerWebMvc:
 	{GET [/v2/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
-2021-07-04 17:09:56.900 TRACE 6764 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+2021-07-05 11:25:50.797 TRACE 14776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
 	s.d.s.w.ApiResourceController:
-	{ [/swagger-resources]}: swaggerResources()
-	{ [/configuration/ui]}: uiConfiguration()
-	{ [/configuration/security]}: securityConfiguration()
-2021-07-04 17:09:56.905 TRACE 6764 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	{GET [/swagger-resources/configuration/security], produces [application/json]}: securityConfiguration()
+	{GET [/swagger-resources], produces [application/json]}: swaggerResources()
+	{GET [/swagger-resources/configuration/ui], produces [application/json]}: uiConfiguration()
+2021-07-05 11:25:50.799 TRACE 14776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	s.d.o.w.OpenApiControllerWebMvc:
+	{GET [/v3/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2021-07-05 11:25:50.803 TRACE 14776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
 	o.s.b.a.w.s.e.BasicErrorController:
 	{ [/error]}: error(HttpServletRequest)
 	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
-2021-07-04 17:09:56.910 DEBUG 6764 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
-2021-07-04 17:09:57.037  INFO 6764 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2021-07-04 17:09:57.105  WARN 6764 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-07-04 17:09:57.191  INFO 6764 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2021-07-04 17:09:57.199  INFO 6764 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-07-04 17:09:57.213  INFO 6764 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-07-04 17:09:57.220  INFO 6764 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-07-04 17:09:57.232  INFO 6764 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Started SpringbootAssignmentApplication in 2.6 seconds (JVM running for 3.324)
-2021-07-04 17:09:58.523  INFO 6764 --- [cluster-ClusterId{value='60e1c134a47ab30cec7e615a', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+2021-07-05 11:25:50.809 DEBUG 14776 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
+2021-07-05 11:25:50.933  INFO 14776 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-07-05 11:25:50.990  WARN 14776 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-07-05 11:25:51.079  INFO 14776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-05 11:25:51.188  INFO 14776 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Started SpringbootAssignmentApplication in 2.83 seconds (JVM running for 3.59)
+2021-07-05 11:25:52.336  INFO 14776 --- [cluster-ClusterId{value='60e2c20e9f06df4c9c57d78b', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
 
 com.mongodb.MongoSocketOpenException: Exception opening socket
 	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-4.2.3.jar:na]
@@ -385,11 +58,370 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.2.3.jar:na]
 	... 4 common frames omitted
 
-2021-07-04 17:10:05.502  INFO 6764 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-07-04 17:10:05.503  INFO 6764 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-07-04 17:10:05.507  INFO 6764 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2021-07-04 17:11:26.972 TRACE 6764 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 matching mappings: [{ [/error]}, { [/error], produces [text/html]}]
-2021-07-04 17:11:26.973 TRACE 6764 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2021-07-04 17:11:27.005 TRACE 6764 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
-2021-07-04 17:11:27.061 TRACE 6764 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
-2021-07-04 17:11:27.075 TRACE 6764 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)
+2021-07-05 11:26:47.445  INFO 14776 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-05 11:26:47.445  INFO 14776 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-05 11:26:47.446  INFO 14776 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-05 11:27:12.415 TRACE 14776 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 matching mappings: [{ [/error], produces [text/html]}, { [/error]}]
+2021-07-05 11:27:12.415 TRACE 14776 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2021-07-05 11:27:16.249 TRACE 14776 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 matching mappings: [{ [/error]}, { [/error], produces [text/html]}]
+2021-07-05 11:27:16.250 TRACE 14776 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2021-07-05 11:27:21.822 TRACE 14776 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 matching mappings: [{ [/error], produces [text/html]}, { [/error]}]
+2021-07-05 11:27:21.823 TRACE 14776 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2021-07-05 11:29:23.849 TRACE 14776 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 matching mappings: [{ [/error], produces [text/html]}, { [/error]}]
+2021-07-05 11:29:23.856 TRACE 14776 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2021-07-05 11:29:23.940 TRACE 14776 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 matching mappings: [{ [/error]}, { [/error], produces [text/html]}]
+2021-07-05 11:29:23.941 TRACE 14776 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2021-07-05 11:39:52.689  INFO 14776 --- [RMI TCP Connection(21)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-07-05 11:40:00.070  INFO 19348 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Starting SpringbootAssignmentApplication using Java 15.0.2 on LAPTOP-D177S94B with PID 19348 (C:\Users\User\Desktop\spring-workspace\SpringbootAssignment\target\classes started by User in C:\Users\User\Desktop\spring-workspace\SpringbootAssignment)
+2021-07-05 11:40:00.072  INFO 19348 --- [main] c.e.d.a.SpringbootAssignmentApplication  : The following profiles are active: defult
+2021-07-05 11:40:00.926  INFO 19348 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-07-05 11:40:00.970  INFO 19348 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 1 MongoDB repository interfaces.
+2021-07-05 11:40:01.391  INFO 19348 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-05 11:40:01.400  INFO 19348 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-05 11:40:01.401  INFO 19348 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-05 11:40:01.514  INFO 19348 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-05 11:40:01.515  INFO 19348 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1395 ms
+2021-07-05 11:40:01.670  INFO 19348 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-07-05 11:40:02.203 TRACE 19348 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.d.a.MyController:
+	{GET [/items/items/{no}]}: getItem(String)
+	{PUT [/items/items/{no}/w/{quantity}]}: withdrawalItem(String,String)
+	{PUT [/items/items/{no}/d/{quantity}]}: depositItem(String,String)
+	{DELETE [/items/remove /items/{no}]}: deleteItem(String)
+	{GET [/items/welcome]}: sayHello()
+	{GET [/items/items/]}: getAllItems()
+	{POST [/items/items/{no}]}: addItem(Item)
+2021-07-05 11:40:02.207 TRACE 19348 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	s.d.s.w.Swagger2ControllerWebMvc:
+	{GET [/v2/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2021-07-05 11:40:02.209 TRACE 19348 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	s.d.s.w.ApiResourceController:
+	{GET [/swagger-resources/configuration/security], produces [application/json]}: securityConfiguration()
+	{GET [/swagger-resources], produces [application/json]}: swaggerResources()
+	{GET [/swagger-resources/configuration/ui], produces [application/json]}: uiConfiguration()
+2021-07-05 11:40:02.210 TRACE 19348 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	s.d.o.w.OpenApiControllerWebMvc:
+	{GET [/v3/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2021-07-05 11:40:02.217 TRACE 19348 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2021-07-05 11:40:02.223 DEBUG 19348 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
+2021-07-05 11:40:02.368  INFO 19348 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-07-05 11:40:02.441  WARN 19348 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-07-05 11:40:02.518  INFO 19348 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-05 11:40:02.643  INFO 19348 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Started SpringbootAssignmentApplication in 2.975 seconds (JVM running for 3.832)
+2021-07-05 11:40:02.657  INFO 19348 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-05 11:40:02.658  INFO 19348 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-05 11:40:02.659  INFO 19348 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-05 11:40:03.481 TRACE 19348 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
+2021-07-05 11:40:03.571 TRACE 19348 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
+2021-07-05 11:40:03.578 TRACE 19348 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
+2021-07-05 11:40:03.738  INFO 19348 --- [cluster-ClusterId{value='60e2c5617792945a3a67ff5c', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:143) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144) ~[mongodb-driver-core-4.2.3.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:648) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.2.3.jar:na]
+	... 4 common frames omitted
+
+2021-07-05 11:40:03.787 TRACE 19348 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)
+2021-07-05 13:44:46.722  INFO 19348 --- [RMI TCP Connection(130)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-07-05 13:44:54.072  INFO 11672 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Starting SpringbootAssignmentApplication using Java 15.0.2 on LAPTOP-D177S94B with PID 11672 (C:\Users\User\Desktop\spring-workspace\SpringbootAssignment\target\classes started by User in C:\Users\User\Desktop\spring-workspace\SpringbootAssignment)
+2021-07-05 13:44:54.075  INFO 11672 --- [main] c.e.d.a.SpringbootAssignmentApplication  : The following profiles are active: defult
+2021-07-05 13:44:54.871  INFO 11672 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-07-05 13:44:54.908  INFO 11672 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 1 MongoDB repository interfaces.
+2021-07-05 13:44:55.328  INFO 11672 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-05 13:44:55.336  INFO 11672 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-05 13:44:55.337  INFO 11672 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-05 13:44:55.427  INFO 11672 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-05 13:44:55.428  INFO 11672 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1310 ms
+2021-07-05 13:44:55.567  INFO 11672 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-07-05 13:44:56.072 TRACE 11672 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.d.a.MyController:
+	{GET [/items/root/items/{no}]}: getItem(String)
+	{GET [/items/root/items/]}: getAllItems()
+	{GET [/items/root/]}: sayHello()
+	{PUT [/items/root/items/{no}/d/{quantity}]}: depositItem(String,String)
+	{DELETE [/items/remove root/items/{no}]}: deleteItem(String)
+	{PUT [/items/root/items/{no}/w/{quantity}]}: withdrawalItem(String,String)
+	{POST [/items/root/items/{no}]}: addItem(Item)
+2021-07-05 13:44:56.082 TRACE 11672 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	s.d.s.w.Swagger2ControllerWebMvc:
+	{GET [/v2/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2021-07-05 13:44:56.084 TRACE 11672 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	s.d.s.w.ApiResourceController:
+	{GET [/swagger-resources/configuration/security], produces [application/json]}: securityConfiguration()
+	{GET [/swagger-resources/configuration/ui], produces [application/json]}: uiConfiguration()
+	{GET [/swagger-resources], produces [application/json]}: swaggerResources()
+2021-07-05 13:44:56.086 TRACE 11672 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	s.d.o.w.OpenApiControllerWebMvc:
+	{GET [/v3/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2021-07-05 13:44:56.091 TRACE 11672 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2021-07-05 13:44:56.096 DEBUG 11672 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
+2021-07-05 13:44:56.234  INFO 11672 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-07-05 13:44:56.301  WARN 11672 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-07-05 13:44:56.378  INFO 11672 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-05 13:44:56.428  INFO 11672 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Started SpringbootAssignmentApplication in 2.732 seconds (JVM running for 3.481)
+2021-07-05 13:44:57.640  INFO 11672 --- [cluster-ClusterId{value='60e2e2a72f579f5970781b51', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:143) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144) ~[mongodb-driver-core-4.2.3.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:648) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.2.3.jar:na]
+	... 4 common frames omitted
+
+2021-07-05 13:45:19.862  INFO 11672 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-05 13:45:19.863  INFO 11672 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-05 13:45:19.864  INFO 11672 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-05 13:45:20.242 TRACE 11672 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
+2021-07-05 13:45:20.337 TRACE 11672 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
+2021-07-05 13:45:20.368 TRACE 11672 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
+2021-07-05 13:45:20.442 TRACE 11672 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)
+2021-07-05 13:45:26.945 TRACE 11672 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
+2021-07-05 13:45:26.964 TRACE 11672 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
+2021-07-05 13:45:26.973 TRACE 11672 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
+2021-07-05 13:45:27.043 TRACE 11672 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)
+2021-07-05 13:45:37.541 TRACE 11672 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
+2021-07-05 13:45:37.562 TRACE 11672 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
+2021-07-05 13:45:37.587 TRACE 11672 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
+2021-07-05 13:45:37.648 TRACE 11672 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)
+2021-07-05 13:46:13.370 TRACE 11672 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
+2021-07-05 13:46:13.389 TRACE 11672 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
+2021-07-05 13:46:13.400 TRACE 11672 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
+2021-07-05 13:46:13.458 TRACE 11672 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)
+2021-07-05 13:51:19.667  INFO 11672 --- [RMI TCP Connection(14)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-07-05 13:51:26.955  INFO 2324 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Starting SpringbootAssignmentApplication using Java 15.0.2 on LAPTOP-D177S94B with PID 2324 (C:\Users\User\Desktop\spring-workspace\SpringbootAssignment\target\classes started by User in C:\Users\User\Desktop\spring-workspace\SpringbootAssignment)
+2021-07-05 13:51:26.957  INFO 2324 --- [main] c.e.d.a.SpringbootAssignmentApplication  : The following profiles are active: defult
+2021-07-05 13:51:27.830  INFO 2324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-07-05 13:51:27.870  INFO 2324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 MongoDB repository interfaces.
+2021-07-05 13:51:28.306  INFO 2324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-05 13:51:28.316  INFO 2324 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-05 13:51:28.316  INFO 2324 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-05 13:51:28.419  INFO 2324 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-05 13:51:28.420  INFO 2324 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1417 ms
+2021-07-05 13:51:28.582  INFO 2324 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-07-05 13:51:29.096 TRACE 2324 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.d.a.MyController:
+	{POST [/items/root/items/{no}]}: addItem(Item)
+	{GET [/items/root/]}: sayHello()
+	{GET [/items/root/items/]}: getAllItems()
+	{DELETE [/items/remove root/items/{no}]}: deleteItem(String)
+	{PUT [/items/root/items/{no}/d/{quantity}]}: depositItem(String,String)
+	{PUT [/items/root/items/{no}/w/{quantity}]}: withdrawalItem(String,String)
+	{GET [/items/root/items/{no}]}: getItem(String)
+2021-07-05 13:51:29.098 TRACE 2324 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	s.d.s.w.Swagger2ControllerWebMvc:
+	{GET [/v2/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2021-07-05 13:51:29.100 TRACE 2324 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	s.d.s.w.ApiResourceController:
+	{GET [/swagger-resources/configuration/security], produces [application/json]}: securityConfiguration()
+	{GET [/swagger-resources], produces [application/json]}: swaggerResources()
+	{GET [/swagger-resources/configuration/ui], produces [application/json]}: uiConfiguration()
+2021-07-05 13:51:29.102 TRACE 2324 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	s.d.o.w.OpenApiControllerWebMvc:
+	{GET [/v3/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2021-07-05 13:51:29.107 TRACE 2324 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+	{ [/error]}: error(HttpServletRequest)
+2021-07-05 13:51:29.112 DEBUG 2324 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
+2021-07-05 13:51:29.246  INFO 2324 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-07-05 13:51:29.315  WARN 2324 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-07-05 13:51:29.400  INFO 2324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-05 13:51:29.445  INFO 2324 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Started SpringbootAssignmentApplication in 3.058 seconds (JVM running for 3.791)
+2021-07-05 13:51:30.658  INFO 2324 --- [cluster-ClusterId{value='60e2e43081620843a9faa710', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:143) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144) ~[mongodb-driver-core-4.2.3.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:648) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.2.3.jar:na]
+	... 4 common frames omitted
+
+2021-07-05 13:51:36.393  INFO 2324 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-05 13:51:36.394  INFO 2324 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-05 13:51:36.395  INFO 2324 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-05 13:51:36.664 TRACE 2324 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
+2021-07-05 13:51:36.766 TRACE 2324 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
+2021-07-05 13:51:36.775 TRACE 2324 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
+2021-07-05 13:51:36.916 TRACE 2324 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)
+2021-07-05 13:51:41.420 TRACE 2324 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
+2021-07-05 13:51:41.435 TRACE 2324 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
+2021-07-05 13:51:41.444 TRACE 2324 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
+2021-07-05 13:51:41.498 TRACE 2324 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)
+2021-07-05 13:52:09.101  INFO 2324 --- [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-07-05 13:52:16.202  INFO 14028 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Starting SpringbootAssignmentApplication using Java 15.0.2 on LAPTOP-D177S94B with PID 14028 (C:\Users\User\Desktop\spring-workspace\SpringbootAssignment\target\classes started by User in C:\Users\User\Desktop\spring-workspace\SpringbootAssignment)
+2021-07-05 13:52:16.204  INFO 14028 --- [main] c.e.d.a.SpringbootAssignmentApplication  : The following profiles are active: defult
+2021-07-05 13:52:16.974  INFO 14028 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-07-05 13:52:17.014  INFO 14028 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 1 MongoDB repository interfaces.
+2021-07-05 13:52:17.408  INFO 14028 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-05 13:52:17.416  INFO 14028 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-05 13:52:17.416  INFO 14028 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-05 13:52:17.517  INFO 14028 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-05 13:52:17.518  INFO 14028 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1269 ms
+2021-07-05 13:52:17.670  INFO 14028 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-07-05 13:52:18.277 TRACE 14028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.d.a.MyController:
+	{GET [/items/root/items/{no}]}: getItem(String)
+	{GET [/items/]}: sayHello()
+	{POST [/items/root/items/{no}]}: addItem(Item)
+	{PUT [/items/root/items/{no}/w/{quantity}]}: withdrawalItem(String,String)
+	{GET [/items/root/items/]}: getAllItems()
+	{DELETE [/items/remove root/items/{no}]}: deleteItem(String)
+	{PUT [/items/root/items/{no}/d/{quantity}]}: depositItem(String,String)
+2021-07-05 13:52:18.280 TRACE 14028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	s.d.s.w.Swagger2ControllerWebMvc:
+	{GET [/v2/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2021-07-05 13:52:18.282 TRACE 14028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	s.d.s.w.ApiResourceController:
+	{GET [/swagger-resources/configuration/ui], produces [application/json]}: uiConfiguration()
+	{GET [/swagger-resources], produces [application/json]}: swaggerResources()
+	{GET [/swagger-resources/configuration/security], produces [application/json]}: securityConfiguration()
+2021-07-05 13:52:18.283 TRACE 14028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	s.d.o.w.OpenApiControllerWebMvc:
+	{GET [/v3/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2021-07-05 13:52:18.289 TRACE 14028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2021-07-05 13:52:18.295 DEBUG 14028 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
+2021-07-05 13:52:18.433  INFO 14028 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-07-05 13:52:18.507  WARN 14028 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-07-05 13:52:18.600  INFO 14028 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-05 13:52:18.705  INFO 14028 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Started SpringbootAssignmentApplication in 2.864 seconds (JVM running for 3.607)
+2021-07-05 13:52:19.755  INFO 14028 --- [cluster-ClusterId{value='60e2e461c94ff01d46c6a6af', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:143) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144) ~[mongodb-driver-core-4.2.3.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:648) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.2.3.jar:na]
+	... 4 common frames omitted
+
+2021-07-05 13:52:38.418  INFO 14028 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-05 13:52:38.421  INFO 14028 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-05 13:52:38.424  INFO 14028 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-05 13:52:38.716 TRACE 14028 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
+2021-07-05 13:52:38.833 TRACE 14028 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
+2021-07-05 13:52:38.844 TRACE 14028 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
+2021-07-05 13:52:38.894 TRACE 14028 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)
+2021-07-05 13:52:40.337 TRACE 14028 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
+2021-07-05 13:52:40.379 TRACE 14028 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
+2021-07-05 13:52:40.384 TRACE 14028 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
+2021-07-05 13:52:40.436 TRACE 14028 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)
+2021-07-05 13:53:09.050  INFO 14028 --- [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-07-05 13:53:16.158  INFO 17212 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Starting SpringbootAssignmentApplication using Java 15.0.2 on LAPTOP-D177S94B with PID 17212 (C:\Users\User\Desktop\spring-workspace\SpringbootAssignment\target\classes started by User in C:\Users\User\Desktop\spring-workspace\SpringbootAssignment)
+2021-07-05 13:53:16.161  INFO 17212 --- [main] c.e.d.a.SpringbootAssignmentApplication  : The following profiles are active: defult
+2021-07-05 13:53:17.009  INFO 17212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-07-05 13:53:17.057  INFO 17212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 1 MongoDB repository interfaces.
+2021-07-05 13:53:17.526  INFO 17212 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-05 13:53:17.537  INFO 17212 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-05 13:53:17.537  INFO 17212 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-05 13:53:17.649  INFO 17212 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-05 13:53:17.650  INFO 17212 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1437 ms
+2021-07-05 13:53:17.785  INFO 17212 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-07-05 13:53:18.282 TRACE 17212 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.d.a.MyController:
+	{GET [/items/items/{no}]}: getItem(String)
+	{GET [/items/]}: sayHello()
+	{PUT [/items/items/{no}/w/{quantity}]}: withdrawalItem(String,String)
+	{GET [/items/items/]}: getAllItems()
+	{POST [/items/items/{no}]}: addItem(Item)
+	{DELETE [/items/remove root/items/{no}]}: deleteItem(String)
+	{PUT [/items/items/{no}/d/{quantity}]}: depositItem(String,String)
+2021-07-05 13:53:18.285 TRACE 17212 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	s.d.s.w.Swagger2ControllerWebMvc:
+	{GET [/v2/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2021-07-05 13:53:18.288 TRACE 17212 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	s.d.s.w.ApiResourceController:
+	{GET [/swagger-resources/configuration/ui], produces [application/json]}: uiConfiguration()
+	{GET [/swagger-resources], produces [application/json]}: swaggerResources()
+	{GET [/swagger-resources/configuration/security], produces [application/json]}: securityConfiguration()
+2021-07-05 13:53:18.291 TRACE 17212 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	s.d.o.w.OpenApiControllerWebMvc:
+	{GET [/v3/api-docs], produces [application/json || application/hal+json]}: getDocumentation(String,HttpServletRequest)
+2021-07-05 13:53:18.297 TRACE 17212 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2021-07-05 13:53:18.304 DEBUG 17212 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
+2021-07-05 13:53:18.431  INFO 17212 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-07-05 13:53:18.501  WARN 17212 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-07-05 13:53:18.581  INFO 17212 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-07-05 13:53:18.680  INFO 17212 --- [main] c.e.d.a.SpringbootAssignmentApplication  : Started SpringbootAssignmentApplication in 2.914 seconds (JVM running for 3.633)
+2021-07-05 13:53:19.836  INFO 17212 --- [cluster-ClusterId{value='60e2e49d23c1c30f96bf2017', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:143) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144) ~[mongodb-driver-core-4.2.3.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:648) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-4.2.3.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.2.3.jar:na]
+	... 4 common frames omitted
+
+2021-07-05 13:53:24.634  INFO 17212 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-05 13:53:24.635  INFO 17212 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-05 13:53:24.636  INFO 17212 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-05 13:53:24.882 TRACE 17212 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
+2021-07-05 13:53:25.008 TRACE 17212 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
+2021-07-05 13:53:25.017 TRACE 17212 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()

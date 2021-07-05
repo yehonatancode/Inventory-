@@ -9,5 +9,7 @@ public class SpringbootAssignmentApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootAssignmentApplication.class, args);
 	}
+	
 
+	
 }
